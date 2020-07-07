@@ -1,17 +1,132 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Julia Koroleva Web Developer</title>
-  <link rel="stylesheet" href="css/style.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Julia Koroleva | Web Developer</title>
+	<link rel="stylesheet" href="css/style.min.css">
+	<script src="https://kit.fontawesome.com/79b18565e0.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/libs.min.js"></script>
-  <script src="js/main.js"></script>
+<header class="header">
+	<div class="header__wrapper">
+		<div class="header__logo">ЮК</div>
+		<nav class="header__nav">
+			<a class="header__link" href="#">Главная</a>
+			<a class="header__link" href="#works">Работы</a>
+			<a class="header__link" href="#">Контакты</a>
+		</nav>
+		<div class="header__social-link">
+			<a href="#"><i class="fab fa-linkedin-in"></i></a>
+			<a href="#"><i class="fab fa-github"></i></a>
+			<a href="#"><i class="fab fa-vk"></i></a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="header__info">
+			<div class="header__row">
+				<h1 class="header__title"><span>Юлия</span><br><span>Королева</span></h1>
+				<p class="header__text">
+					Верстальщик сайтов, веб-разработчик.
+					Оперативная верстка. Работаю с
+					соблюдением сроков и выполнением ТЗ.
+				</p>
+				<div class="header__buttons">
+					<button class="btn header__btn">Познакомиться</button>
+					<button class="btn header__btn">Контакты</button>
+				</div>
+			</div>
+			<div class="header__row">
+				<img src="./images/header_img.jpg" alt="image">
+			</div>
+		</div>
+	</div>
+	<div class="header__background-img">
+		<img src="./images/header-bg-img.png" alt="">
+	</div>
+</header>
+
+<section class="skills">
+	<div class="container">
+		<div class="skills__wrapper">
+			<div class="skills__text">
+				<div class="skills__list-title">
+					<h3 class="title-h3">Что я умею:</h3>
+				</div>
+				<ul class="skills__list">
+					<li class="list-item">pixel perfect, полное соответствие макету.</li>
+					<li class="list-item">верстаю с сеткой или без.</li>
+					<li class="list-item">адаптивная верстка под мобильные устройства.</li>
+					<li class="list-item">оптимизация под retina-экраны.</li>
+					<li class="list-item">верстка с Bootstrap и без него.</li>
+				</ul>
+				<button class="btn">Смотреть работы</button>
+			</div>
+			<div class="skills__contacts">
+				<div class="skills__social-title">
+					<h3 class="title-h3">На связи:</h3>
+				</div>
+				<div class="skills__buttons">
+					<a class="skills__social-btn" href="#"><img src="./images/github.png" alt="github"></a>
+					<a class="skills__social-btn" href="#"><img src="./images/telegram.png" alt="telegram"></a>
+					<a class="skills__social-btn" href="#"><img src="./images/vk.png" alt="vk"></a>
+					<a class="skills__social-btn" href="#"><img src="./images/facebook.png" alt="fb"></a>
+				</div>
+				<div class="skills__email">
+					<a href="mailto:">youlka25@yandex.ru</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="works" id="works">
+	<div class="container">
+		<div class="works__title">
+			<h2 class="title-h2">Портфолио</h2>
+			<div class="works__tabs">
+				<a class="tab-link active" href="#">Все работы</a>
+				<a class="tab-link" href="#">Лендинг</a>
+				<a class="tab-link" href="#">Сайт</a>
+			</div>
+		</div>
+		<div class="works__preview">
+			<div class="works__item item-1">
+				<img src="./images/discover.png" alt="">
+				<h4 class="title-h4">Верстка “Форест тревел”</h4>
+				<p>Верстка многостраничного сайта.</p>
+			</div>
+			<div class="works__item item-2">
+				<img src="./images/dream.png" alt="">
+				<h4 class="title-h4">Сайт для коворкинга “Мечта”</h4>
+				<p>Верстка лендинга.</p>
+			</div>
+			<div class="works__item item-3">
+				<img src="./images/phone.png" alt="">
+				<h5 class="title-h5">Верстка “Мир Авто”</h5>
+				<p>Верстка многостраничного сайта.</p>
+			</div>
+			<div class="works__item item-4">
+				<img src="./images/madgap.png" alt="">
+				<h5 class="title-h5">Верстка “Мир Авто”</h5>
+				<p>Верстка многостраничного сайта.</p>
+			</div>
+			<div class="works__item item-5">
+				<img src="./images/orange.png" alt="">
+				<h5 class="title-h5">Верстка “Мир Авто”</h5>
+				<p>Верстка многостраничного сайта.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/libs.min.js"></script>
+<script src="js/main.js"></script>
 </body>
+
 </html>
