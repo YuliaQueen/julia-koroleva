@@ -87,11 +87,11 @@
 	<div class="container">
 		<div class="works__title">
 			<h2 class="title-h2">Портфолио</h2>
-			<div class="works__tabs">
+			<nav class="works__tabs">
 				<a class="tab-link active" href="#">Все работы</a>
-				<a class="tab-link" href="#">Лендинг</a>
-				<a class="tab-link" href="#">Сайт</a>
-			</div>
+				<a class="tab-link" href="#">Лендинги</a>
+				<a class="tab-link" href="#">Корпоративные</a>
+			</nav>
 		</div>
 		<div class="works__preview">
 			<div class="works__item item-1">
@@ -241,19 +241,27 @@
 <footer class="footer">
 	<div class="container">
 		<div class="footer__copy">
-			&copy; &mdash; Юлия Королева
+			&copy; 2020 &mdash; Юлия Королева
 		</div>
 		<div class="footer__text">
-			<p>Веб-разработик из Москвы, занимаюсь версткой и созданием сайтов.</p>
-			<p>Этот сайт сделал в рамках прохождения обучения по верстке на курсах от <a href="#">WebCademy.ru</a></p>
+			<p>Веб-разработчик из Вологды, занимаюсь версткой и созданием сайтов.</p>
+			<p>Этот сайт сделала в рамках прохождения обучения по верстке на курсах от <a href="#">WebCademy.ru</a></p>
 		</div>
 	</div>
 </footer>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+    $(document).on('click','.tab-link',function(e){
+        e.preventDefault();
+    })
+</script>
 </body>
 
 </html>
