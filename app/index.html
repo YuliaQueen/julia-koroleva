@@ -15,14 +15,14 @@
 	<div class="header__wrapper">
 		<div class="header__logo"><a href="/">ЮК</a></div>
 		<nav class="header__nav">
-			<a class="header__link" href="#">Главная</a>
-			<a class="header__link" href="#works">Работы</a>
-			<a class="header__link" href="#contacts">Контакты</a>
+			<div class="header__link"><a href="#">Главная</a></div>
+			<div class="header__link"><a href="#works">Работы</a></div>
+			<div class="header__link"><a href="#contacts">Контакты</a></div>
 		</nav>
 		<div class="header__social-link">
-			<a href="#"><i class="fab fa-linkedin-in"></i></a>
-			<a href="#"><i class="fab fa-github"></i></a>
-			<a href="#"><i class="fab fa-vk"></i></a>
+			<a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+			<a class="github" href="#"><i class="fab fa-github"></i></a>
+			<a class="vk" href="#"><i class="fab fa-vk"></i></a>
 		</div>
 	</div>
 	<div class="container">
@@ -95,27 +95,42 @@
 		</div>
 		<div class="works__preview">
 			<div class="works__item item-1">
-				<img src="./images/discover.png" alt="">
+				<div class="works__img">
+					<figure><img src="./images/discover.png" alt=""></figure>
+					<button class="works__img-btn">Смотреть проект</button>
+				</div>
 				<h4 class="title-h4">Верстка “Форест тревел”</h4>
 				<p>Верстка многостраничного сайта.</p>
 			</div>
 			<div class="works__item item-2">
-				<img src="./images/dream.png" alt="">
+				<div class="works__img">
+					<figure><img src="./images/dream.png" alt=""></figure>
+					<button class="works__img-btn">Смотреть проект</button>
+				</div>
 				<h4 class="title-h4">Сайт для коворкинга “Мечта”</h4>
 				<p>Верстка лендинга.</p>
 			</div>
 			<div class="works__item item-3">
-				<img src="./images/phone.png" alt="">
+				<div class="works__img">
+					<figure><img src="./images/phone.png" alt=""></figure>
+					<button class="works__img-btn">Смотреть проект</button>
+				</div>
 				<h5 class="title-h5">Верстка “Мир Авто”</h5>
 				<p>Верстка многостраничного сайта.</p>
 			</div>
 			<div class="works__item item-4">
-				<img src="./images/madgap.png" alt="">
+				<div class="works__img">
+					<figure><img src="./images/madgap.png" alt=""></figure>
+					<button class="works__img-btn">Смотреть проект</button>
+				</div>
 				<h5 class="title-h5">Верстка “Мир Авто”</h5>
 				<p>Верстка многостраничного сайта.</p>
 			</div>
 			<div class="works__item item-5">
-				<img src="./images/orange.png" alt="">
+				<div class="works__img">
+					<figure><img src="./images/orange.png" alt=""></figure>
+					<button class="works__img-btn">Смотреть проект</button>
+				</div>
 				<h5 class="title-h5">Верстка “Мир Авто”</h5>
 				<p>Верстка многостраничного сайта.</p>
 			</div>
@@ -253,15 +268,26 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-<!--<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>-->
 
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
 
 <script>
-    $(document).on('click','.tab-link',function(e){
-        e.preventDefault();
-    })
+    $(document).on('click', '.tab-link', function (e) {
+        e.preventDefault()
+    });
+
+    $(".works__img").hover(function () {
+            $(this).find('.works__img-btn').fadeIn(600);
+            $(this).children('figure').css('opacity', '0.5');
+
+
+        }, function () {
+            $(this).find(".works__img-btn").fadeOut(600);
+            $(this).children('figure').css('opacity', '1');
+        }
+    );
+
 </script>
 </body>
 
