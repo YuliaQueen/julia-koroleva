@@ -27,7 +27,7 @@
 	</div>
 	<div class="container">
 		<div class="header__info">
-			<div class="header__row">
+			<div class="header__col">
 				<h1 class="header__title"><span>Юлия</span><br><span>Королева</span></h1>
 				<p class="header__text">
 					Верстальщик сайтов, веб-разработчик.
@@ -35,11 +35,11 @@
 					соблюдением сроков и выполнением ТЗ.
 				</p>
 				<div class="header__buttons">
-					<button class="btn header__btn">Познакомиться</button>
-					<button class="btn header__btn">Контакты</button>
+					<button class="btn header__btn" id="for-skills">Познакомиться</button>
+					<button class="btn header__btn" id="for-contacts">Контакты</button>
 				</div>
 			</div>
-			<div class="header__row">
+			<div class="header__col">
 				<img src="./images/header_img.jpg" alt="image">
 			</div>
 		</div>
@@ -87,14 +87,15 @@
 	<div class="container">
 		<div class="works__title">
 			<h2 class="title-h2">Портфолио</h2>
-			<nav class="works__tabs">
-				<a class="tab-link active" href="#">Все работы</a>
-				<a class="tab-link" href="#">Лендинги</a>
-				<a class="tab-link" href="#">Корпоративные</a>
-			</nav>
 		</div>
-		<div class="works__preview">
-			<div class="works__item item-1">
+		<nav class="works__controls">
+			<a class="tab-link control-active" data-filter="all" href="#">Все работы</a>
+			<a class="tab-link" data-filter=".land" href="#">Лендинги</a>
+			<a class="tab-link" data-filter=".corp" href="#">Корпоративные</a>
+			<a class="tab-link" data-filter=".full" href="#">Многостраничные</a>
+		</nav>
+		<div class="works__preview" id="portfolio-project">
+			<div class="works__item works__item--big mix full">
 				<div class="works__img">
 					<figure><img src="./images/discover.png" alt=""></figure>
 					<button class="works__img-btn">Смотреть проект</button>
@@ -102,7 +103,7 @@
 				<h4 class="title-h4">Верстка “Форест тревел”</h4>
 				<p>Верстка многостраничного сайта.</p>
 			</div>
-			<div class="works__item item-2">
+			<div class="works__item works__item--big mix land">
 				<div class="works__img">
 					<figure><img src="./images/dream.png" alt=""></figure>
 					<button class="works__img-btn">Смотреть проект</button>
@@ -110,7 +111,7 @@
 				<h4 class="title-h4">Сайт для коворкинга “Мечта”</h4>
 				<p>Верстка лендинга.</p>
 			</div>
-			<div class="works__item item-3">
+			<div class="works__item mix corp full">
 				<div class="works__img">
 					<figure><img src="./images/phone.png" alt=""></figure>
 					<button class="works__img-btn">Смотреть проект</button>
@@ -118,7 +119,7 @@
 				<h5 class="title-h5">Верстка “Мир Авто”</h5>
 				<p>Верстка многостраничного сайта.</p>
 			</div>
-			<div class="works__item item-4">
+			<div class="works__item mix land">
 				<div class="works__img">
 					<figure><img src="./images/madgap.png" alt=""></figure>
 					<button class="works__img-btn">Смотреть проект</button>
@@ -126,7 +127,7 @@
 				<h5 class="title-h5">Верстка “Мир Авто”</h5>
 				<p>Верстка многостраничного сайта.</p>
 			</div>
-			<div class="works__item item-5">
+			<div class="works__item mix full">
 				<div class="works__img">
 					<figure><img src="./images/orange.png" alt=""></figure>
 					<button class="works__img-btn">Смотреть проект</button>
@@ -267,8 +268,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-
+<script src="js/mixitup/mixitup.min.js"></script>
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
 
@@ -287,6 +287,46 @@
             $(this).children('figure').css('opacity', '1');
         }
     );
+
+    $("#for-skills").click(function () {
+        $('html, body').animate({
+            scrollTop: $(".skills").offset().top
+        }, 800);
+    });
+
+    $("#for-contacts").click(function () {
+        $('html, body').animate({
+            scrollTop: $(".contacts").offset().top
+        }, 800);
+    });
+
+    //mixitup js
+
+    let containerEl = document.querySelector('#portfolio-project');
+
+    let mixer = mixitup(containerEl, {
+        classNames: {
+            block: "",
+        },
+    });
+
+
+    const filterToggles = document.querySelectorAll('.tab-link');
+    const portfolioBigCards = document.querySelectorAll('.works__item ');
+
+    for (let i = 0; i < filterToggles.length; i++) {
+        filterToggles[i].addEventListener('click', function () {
+            if (i === 0) {
+                for (let j = 0; j < 2; j++) {
+                    portfolioBigCards[j].classList.add('works__item--big')
+                }
+            } else {
+                for (let j = 0; j < 2; j++) {
+                    portfolioBigCards[j].classList.remove('works__item--big')
+                }
+            }
+        })
+    }
 
 </script>
 </body>
