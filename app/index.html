@@ -246,10 +246,19 @@
 				</div>
 			</div>
 			<form action="/" class="contacts__form">
-				<div class="label"><label for="email">Ваш Email</label></div>
-				<input id="email" type="email" placeholder="email">
-				<input type="text" placeholder="Тема письма">
-				<textarea name="" id="" cols="30" rows="5" placeholder="Сообщение"></textarea>
+				<div class="form-row">
+					<input class="input" id="email" type="email">
+					<span class="fake-placeholder">Ваш Email</span>
+				</div>
+				<div class="form-row">
+					<input class="input" type="text">
+					<span class="fake-placeholder">Тема письма</span>
+				</div>
+				<div class="form-row">
+					<textarea class="input" name="" id="" cols="30" rows="5"></textarea>
+					<span class="fake-placeholder">Сообщение</span>
+				</div>
+				
 				<button class="contacts__button btn">Отправить</button>
 			</form>
 		</div>
@@ -332,6 +341,25 @@
         })
     }
 
+    const formRows = document.querySelectorAll(".form-row");
+    const formRowsInputs = document.querySelectorAll(".input");
+
+    for (let i = 0; i < formRows.length; i++) {
+        formRows[i].addEventListener("click", function () {
+            const placeholderElement = this.querySelector(".fake-placeholder");
+            placeholderElement.classList.add("active");
+        });
+    }
+
+    for (let i = 0; i < formRowsInputs.length; i++) {
+        formRowsInputs[i].addEventListener("blur", function () {
+            const thisParent = this.parentElement;
+
+            if (this.value === "") {
+                thisParent.querySelector("span").classList.remove("active");
+            }
+        });
+    }
 </script>
 </body>
 
