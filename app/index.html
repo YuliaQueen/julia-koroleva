@@ -11,6 +11,7 @@
 	
 	<title>Julia Koroleva | Web Developer</title>
 	
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.min.css">
 	<script src="https://kit.fontawesome.com/79b18565e0.js" crossorigin="anonymous"></script>
 </head>
@@ -33,18 +34,25 @@
 	<div class="container">
 		<div class="header__info">
 			<div class="header__col">
-				<h1 class="header__title"><span>Юлия</span><br><span>Королева</span></h1>
-				<p class="header__text">
+				<h1 class="header__title" data-aos-offset="0" data-aos-delay="200" data-aos-duration="500"
+				    data-aos="zoom-in"
+				    data-aos-easing="ease-out-cubic"><span>Юлия</span><br><span>Королева</span></h1>
+				<p class="header__text" data-aos-duration="600" data-aos="zoom-in" data-aos-delay="400">
 					Верстальщик сайтов, веб-разработчик.
 					Оперативная верстка. Работаю с
 					соблюдением сроков и выполнением ТЗ.
 				</p>
 				<div class="header__buttons">
-					<button class="btn header__btn" id="for-skills">Познакомиться</button>
-					<button class="btn header__btn" id="for-contacts">Контакты</button>
+					<button class="btn header__btn" id="for-skills" data-aos-offset="0" data-aos-duration="600" data-aos="zoom-in"
+					        data-aos-delay="600">Познакомиться
+					</button>
+					<button class="btn header__btn" id="for-contacts" data-aos-offset="0" data-aos-duration="600" data-aos="zoom-in"
+					        data-aos-delay="800">Контакты
+					</button>
 				</div>
 			</div>
-			<div class="header__col">
+			<div class="header__col" data-aos-offset="0" data-aos-delay="100" data-aos-duration="500" data-aos="zoom-in"
+			     data-aos-easing="ease-out-cubic">
 				<img src="./images/header_img.jpg" alt="image">
 			</div>
 		</div>
@@ -295,95 +303,15 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/mixitup/mixitup.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
 
 <script>
-    $(document).on('click', '.tab-link', function (e) {
-        e.preventDefault()
-    });
-
-    // $(".works__img").hover(function () {
-    //         $(this).find('.works__img-btn').fadeIn(600);
-    //         $(this).children('figure').css('opacity', '0.5');
-	//
-	//
-    //     }, function () {
-    //         $(this).find(".works__img-btn").fadeOut(600);
-    //         $(this).children('figure').css('opacity', '1');
-    //     }
-    // );
-    
-    //скроллы
-
-    $("#for-skills").click(function () {
-        $('html, body').animate({
-            scrollTop: $(".skills").offset().top
-        }, 800);
-    });
-
-    $("#for-contacts").click(function () {
-        $('html, body').animate({
-            scrollTop: $(".contacts").offset().top
-        }, 800);
-    });
-
-    $("#to-portfolio").click(function () {
-        $('html, body').animate({
-            scrollTop: $(".works").offset().top
-        }, 800);
-    });
-
-    //mixitup js
-
-    let containerEl = document.querySelector('#portfolio-project');
-
-    let mixer = mixitup(containerEl, {
-        classNames: {
-            block: "",
-        },
-        animation: {
-            enable: true,
-        },
-    });
-
-    const filterToggles = document.querySelectorAll('.tab-link');
-    const portfolioBigCards = document.querySelectorAll('.works__item ');
-
-    for (let i = 0; i < filterToggles.length; i++) {
-        filterToggles[i].addEventListener('click', function () {
-            if (i === 0) {
-                for (let j = 0; j < 2; j++) {
-                    portfolioBigCards[j].classList.add('works__item--big')
-                }
-            } else {
-                for (let j = 0; j < 2; j++) {
-                    portfolioBigCards[j].classList.remove('works__item--big')
-                }
-            }
-        })
-    }
-
-    const formRows = document.querySelectorAll(".form-row");
-    const formRowsInputs = document.querySelectorAll(".input");
-
-    for (let i = 0; i < formRows.length; i++) {
-        formRows[i].addEventListener("click", function () {
-            const placeholderElement = this.querySelector(".fake-placeholder");
-            placeholderElement.classList.add("active");
-        });
-    }
-
-    for (let i = 0; i < formRowsInputs.length; i++) {
-        formRowsInputs[i].addEventListener("blur", function () {
-            const thisParent = this.parentElement;
-
-            if (this.value === "") {
-                thisParent.querySelector("span").classList.remove("active");
-            }
-        });
-    }
+    AOS.init();
 </script>
+
 </body>
 
 </html>
