@@ -63,7 +63,7 @@
 					<li class="list-item">оптимизация под retina-экраны.</li>
 					<li class="list-item">верстка с Bootstrap и без него.</li>
 				</ul>
-				<button class="btn">Смотреть работы</button>
+				<button class="btn" id="to-portfolio">Смотреть работы</button>
 			</div>
 			<div class="skills__contacts">
 				<div class="skills__social-title">
@@ -308,6 +308,12 @@
     $("#for-contacts").click(function () {
         $('html, body').animate({
             scrollTop: $(".contacts").offset().top
+        }, 800);
+    });
+
+    $("#to-portfolio").click(function () {
+        $('html, body').animate({
+            scrollTop: $(".works").offset().top
         }, 800);
     });
 
