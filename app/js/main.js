@@ -76,4 +76,7 @@ $(function () {
         });
     }
 
+    //AOS js - анимации
+    AOS.init();
+
 });
