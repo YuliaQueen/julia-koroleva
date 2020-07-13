@@ -79,4 +79,14 @@ $(function () {
     //AOS js - анимации
     AOS.init();
 
+    //hamburger-menu
+
+    const button = document.querySelector('.header__hamburger');
+    const menu = document.querySelector('.mobile__menu');
+
+    button.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        button.classList.toggle('cross');
+        $('.overlay_menu').toggle();
+    })
 });
