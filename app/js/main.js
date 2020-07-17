@@ -83,10 +83,29 @@ $(function () {
 
     const button = document.querySelector('.header__hamburger');
     const menu = document.querySelector('.mobile__menu');
+    const body = document.querySelector('body');
 
     button.addEventListener('click', () => {
         menu.classList.toggle('active');
         button.classList.toggle('cross');
+        body.classList.toggle('noscroll');
         $('.overlay_menu').toggle();
     })
+
+    //scroll
+
+    $(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 100) {
+                $('#scroll_top').show();
+            } else {
+                $('#scroll_top').hide();
+            }
+        });
+
+        $('#scroll_top').click(function () {
+            $('html, body').animate({scrollTop: 0}, 600);
+            return false;
+        });
+    });
 });
