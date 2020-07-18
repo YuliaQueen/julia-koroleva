@@ -4,8 +4,7 @@ $(function () {
         e.preventDefault()
     });
 
-    //скроллы
-
+    //скроллы кнопок
     $("#for-skills").click(function () {
         $('html, body').animate({
             scrollTop: $(".skills").offset().top
@@ -25,7 +24,6 @@ $(function () {
     });
 
     //mixitup js
-
     let containerEl = document.querySelector('#portfolio-project');
 
     let mixer = mixitup(containerEl, {
@@ -55,7 +53,6 @@ $(function () {
     }
 
     //fake-placeholder
-
     const formRows = document.querySelectorAll(".form-row");
     const formRowsInputs = document.querySelectorAll(".input");
 
@@ -80,7 +77,6 @@ $(function () {
     AOS.init();
 
     //hamburger-menu
-
     const button = document.querySelector('.header__hamburger');
     const menu = document.querySelector('.mobile__menu');
     const body = document.querySelector('body');
@@ -91,22 +87,6 @@ $(function () {
         body.classList.toggle('noscroll');
         $('.overlay_menu').toggle();
     })
-
-    //scroll
-    $(function () {
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 100) {
-                $('#scroll_top').show();
-            } else {
-                $('#scroll_top').hide();
-            }
-        });
-
-        $('#scroll_top').click(function () {
-            $('html, body').animate({scrollTop: 0}, 600);
-            return false;
-        });
-    });
 
     //page-nav
     $('#page-nav').onePageNav({
