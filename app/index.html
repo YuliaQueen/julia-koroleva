@@ -22,7 +22,15 @@
 
 <a href="#" id="scroll_top" title="Наверх">To Top</a>
 
-<header class="header">
+<ul id="page-nav">
+	<li class="current"><a href="#header"></a></li>
+	<li><a href="#skills"></a></li>
+	<li><a href="#works"></a></li>
+	<li><a href="#my-job"></a></li>
+	<li><a href="#contacts"></a></li>
+</ul>
+
+<header class="header" id="header">
 	<div class="header__wrapper">
 		<div class="header__logo"
 		     data-aos-offset="0"
@@ -117,7 +125,7 @@
 	</div>
 </header>
 
-<section class="skills">
+<section class="skills" id="skills">
 	<div class="container">
 		<div class="skills__wrapper">
 			<div class="skills__text">
@@ -366,8 +374,9 @@
 <script src="js/mixitup/mixitup.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script src="js/libs.min.js"></script>
-<script src="js/main.js"></script>
+<script src="./js/libs.min.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/nav.js/nav.js"></script>
 
 <script>
     AOS.init();

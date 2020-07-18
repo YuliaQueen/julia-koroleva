@@ -93,7 +93,6 @@ $(function () {
     })
 
     //scroll
-
     $(function () {
         $(window).scroll(function () {
             if ($(window).scrollTop() > 100) {
@@ -108,4 +107,17 @@ $(function () {
             return false;
         });
     });
+
+    //page-nav
+    $('#page-nav').onePageNav({
+        currentClass: 'current',
+        changeHash: false,
+        scrollSpeed: 750,
+        scrollThreshold: 0.5,
+        filter: '',
+        easing: 'swing',
+        begin: function () {},
+        end: function (){},
+        scrollChange: function ($currentListItem) {}
+    })
 });
