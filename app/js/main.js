@@ -80,14 +80,39 @@ $(function () {
     const button = document.querySelector('.header__hamburger');
     const menu = document.querySelector('.mobile__menu');
     const body = document.querySelector('body');
-    const overlay = document.querySelector('.overlay_menu')
+    const overlay = document.querySelector('.overlay_menu');
+    const links = [...document.querySelectorAll('.mobile__menu-link')];
+
+    for (let i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function () {
+            overlay.classList.remove('visible');
+            menu.classList.remove('active');
+            body.classList.remove('noscroll');
+            button.classList.remove('cross');
+        })
+    }
 
     button.addEventListener('click', () => {
         menu.classList.toggle('active');
         button.classList.toggle('cross');
         body.classList.toggle('noscroll');
         overlay.classList.toggle('visible');
-    })
+    });
+
+
+    overlay.addEventListener('click', function () {
+        this.classList.remove('visible');
+        menu.classList.remove('active');
+        body.classList.remove('noscroll');
+        button.classList.remove('cross');
+    });
+
+    window.addEventListener('resize', function () {
+        menu.classList.remove('active');
+        body.classList.remove('noscroll');
+        button.classList.remove('cross');
+        overlay.classList.remove('visible');
+    });
 
     //page-nav plugin
     $('#page-nav').onePageNav({
