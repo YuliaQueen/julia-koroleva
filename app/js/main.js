@@ -80,12 +80,13 @@ $(function () {
     const button = document.querySelector('.header__hamburger');
     const menu = document.querySelector('.mobile__menu');
     const body = document.querySelector('body');
+    const overlay = document.querySelector('.overlay_menu')
 
     button.addEventListener('click', () => {
         menu.classList.toggle('active');
         button.classList.toggle('cross');
         body.classList.toggle('noscroll');
-        $('.overlay_menu').toggle();
+        overlay.classList.toggle('visible');
     })
 
     //page-nav plugin
