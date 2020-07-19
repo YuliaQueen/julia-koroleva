@@ -73,7 +73,7 @@ $(function () {
         });
     }
 
-    //AOS js - анимации
+    //AOS js - анимации lib
     AOS.init();
 
     //hamburger-menu
@@ -88,7 +88,7 @@ $(function () {
         $('.overlay_menu').toggle();
     })
 
-    //page-nav
+    //page-nav plugin
     $('#page-nav').onePageNav({
         currentClass: 'current',
         changeHash: false,
@@ -96,8 +96,17 @@ $(function () {
         scrollThreshold: 0.5,
         filter: '',
         easing: 'swing',
-        begin: function () {},
-        end: function (){},
-        scrollChange: function ($currentListItem) {}
+        begin: function () {
+        },
+        end: function () {
+        },
+        scrollChange: function ($currentListItem) {
+        }
+    })
+
+    //fix-menu
+    window.addEventListener('scroll', function () {
+        const fixMenu = document.querySelector('.fix-menu');
+        (this.pageYOffset > 50) ? fixMenu.classList.add('fixed') : fixMenu.classList.remove('fixed');
     })
 });
