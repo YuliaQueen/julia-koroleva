@@ -56,22 +56,21 @@ $(function () {
     const formRows = document.querySelectorAll(".form-row");
     const formRowsInputs = document.querySelectorAll(".input");
 
-    for (let i = 0; i < formRows.length; i++) {
-        formRows[i].addEventListener("click", function () {
+    formRows.forEach(function (formRow) {
+        formRow.addEventListener("click", function () {
             const placeholderElement = this.querySelector(".fake-placeholder");
             placeholderElement.classList.add("active");
         });
-    }
+    })
 
-    for (let i = 0; i < formRowsInputs.length; i++) {
-        formRowsInputs[i].addEventListener("blur", function () {
+    formRowsInputs.forEach(function (formRowInput) {
+        formRowInput.addEventListener("blur", function () {
             const thisParent = this.parentElement;
-
             if (this.value === "") {
                 thisParent.querySelector("span").classList.remove("active");
             }
         });
-    }
+    })
 
     //AOS js - анимации lib
     AOS.init();
@@ -83,14 +82,14 @@ $(function () {
     const overlay = document.querySelector('.overlay_menu');
     const links = [...document.querySelectorAll('.mobile__menu-link')];
 
-    for (let i = 0; i < links.length; i++) {
-        links[i].addEventListener('click', function () {
-            overlay.classList.remove('visible');
-            menu.classList.remove('active');
-            body.classList.remove('noscroll');
-            button.classList.remove('cross');
+    links.forEach(function (link) {
+        link.addEventListener('click', function () {
+            menu.classList.toggle('active');
+            button.classList.toggle('cross');
+            body.classList.toggle('noscroll');
+            overlay.classList.toggle('visible');
         })
-    }
+    })
 
     button.addEventListener('click', () => {
         menu.classList.toggle('active');
